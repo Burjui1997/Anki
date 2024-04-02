@@ -16,7 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
 from cards import views
+import debug_toolbar
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,3 +27,8 @@ urlpatterns = [
     path('cards/', include('cards.urls')),
     path('cards/<int:card_id>/detail', views.get_detail_card_by_id, name='card_detail')
 ]
+
+if settings.DEBUG:
+    urlpatterns = [
+        path('__debug__/', include(debug_toolbar.urls))
+    ] + urlpatterns

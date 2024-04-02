@@ -1,0 +1,197 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+#   For a library or package, you might want to ignore these files since the code is
+#   intended to run in multiple environments; otherwise, check them in:
+# .python-version
+
+# pipenv
+#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
+#   However, in case of collaboration, if having platform-specific dependencies or dependencies
+#   having no cross-platform support, pipenv may install dependencies that don't work, or not
+#   install all needed dependencies.
+#Pipfile.lock
+
+# poetry
+#   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
+#   This is especially recommended for binary packages to ensure reproducibility, and is more
+#   commonly ignored for libraries.
+#   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
+#poetry.lock
+
+# pdm
+#   Similar to Pipfile.lock, it is generally recommended to include pdm.lock in version control.
+#pdm.lock
+#   pdm stores project-wide configurations in .pdm.toml, but it is recommended to not include it
+#   in version control.
+#   https://pdm.fming.dev/#use-with-ide
+.pdm.toml
+
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# PyCharm
+#  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
+#  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
+#  and can be added to the global gitignore or merged into this file.  For a more nuclear
+#  option (not recommended) you can uncomment the following to ignore the entire idea folder.
+#.idea/
+/.idea/.gitignore
+/.idea/django_329.iml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/inspectionProfiles/profiles_settings.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/vcs.xml
+.idea/git_toolbox_prj.xml
+.vscode/settings.json
+/.vscode/PythonImportHelper-v2-Completion.json
+/db_full.db
+/db.sqlite
+/lesson_47.db
+/cards/migrations/0005_tag_remove_card_tags_card_tags.py
+
+django_cache/0b253042e2e012add39dd8cb41afaed6.djcache
+django_cache/1e6daaf30253372aa8c74261e3537e49.djcache
+django_cache/3fc813d13d696d70f0bd74ad5c6ca39e.djcache
+django_cache/7e9e90b3fdc0d141c6a26a1717795d48.djcache
+django_cache/41efe5b385572d62c0b19856c4dff2dd.djcache
+django_cache/79ac5a74ef74620911946c9ba62f764e.djcache
+django_cache/264ea4b61f0a6a7af99a8b3450e47bf8.djcache
+django_cache/1874096fd9b4de3042ebb8e4929788bc.djcache
+django_cache/1869793212b86f4ce68b1b62f4d00bf5.djcache
+django_cache/7035218428f55a421b504f421cd400c2.djcache
+django_cache/a565e6b4c21123654c88ee231d1e1f81.djcache
+django_cache/b15b874b600952e8afb0fc26be9e1367.djcache
+django_cache/bc66041b0ebed50acc234e3eeef09eef.djcache
+django_cache/bd6e01808443654c8ebe27a5a55a74b2.djcache
+django_cache/c3cd3b7985d0cf5cd191fca51d35b96b.djcache
+django_cache/c412b127e016599eed5f807e75c6f199.djcache
+django_cache/c205650a7bcbaf12efee644240f1518d.djcache
+django_cache/cea97fbc66a3f65faadd075adeb10989.djcache
+django_cache/db702920a20bdb7df4b5b47b9fe4532f.djcache
+django_cache/de6ddd9fe7c709d5a66ca11e46e88b6c.djcache
+django_cache/df8374404177059d694b69ac53072e43.djcache
+django_cache/ec8be7a715c738cd820458009cef4908.djcache

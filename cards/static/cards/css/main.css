@@ -1,3 +1,4 @@
+/* cards/static/cards/css/main.css */
 body {
 background-color: #f3f4f2;
 }
@@ -16,10 +17,10 @@ body {
   flex-direction: column;
 }
 
-.container-main {
-    text-align: center;
+main {
+  flex: 1;
+}
 
-    }
 footer {
   flex-shrink: 0;
 }

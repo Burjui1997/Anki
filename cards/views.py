@@ -48,12 +48,12 @@ def catalog(request):
         order_by = f'-{sort}'
 
     # Получаем отсортированные карточки
-    cards = Card.objects.all().order_by(order_by)
+    cards = Card.objects.prefetch_related('tags').order_by(order_by)
 
     # Подготавливаем контекст и отображаем шаблон
     context = {
         'cards': cards,
-        'cards_count': cards.count(),
+        'cards_count': len(cards),
         'menu': info['menu'],
     }
     return render(request, 'cards/catalog.html', context=context)
