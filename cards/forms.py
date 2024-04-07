@@ -1,15 +1,21 @@
 from django import forms
 from cards.models import Category, Card, Tag
 
+
 class CardForm(forms.Form):
-    question = forms.CharField(label='Вопрос', max_length=100, min_length=3, error_messages={'required': 'Поле не может быть пустым', 'min_length': 'Минимум 3 символа!'})
-    answer = forms.CharField(label='Ответ', min_length=10, widget=forms.Textarea(attrs={'rows': 10, 'cols': 20}), error_messages={'min_length': 'Минимум 10 символов'})
-    category = forms.ModelChoiceField(queryset=Category.objects.all(), label='Категория', empty_label='Вне категории', required=True)
+    question = forms.CharField(label='Вопрос', max_length=100, min_length=3,
+                               error_messages={'required': 'Поле не может быть пустым',
+                                               'min_length': 'Минимум 3 символа!'})
+    answer = forms.CharField(label='Ответ', min_length=10, widget=forms.Textarea(attrs={'rows': 10, 'cols': 20}),
+                             error_messages={'min_length': 'Минимум 10 символов'})
+    category = forms.ModelChoiceField(queryset=Category.objects.all(), label='Категория', empty_label='Вне категории',
+                                      required=True)
+
 
 class CardModelForm(forms.ModelForm):
-    category = forms.ModelChoiceField(queryset=Category.objects.all(), empty_label="Категория не выбрана", label="Категории")
+    category = forms.ModelChoiceField(queryset=Category.objects.all(), empty_label="Категория не выбрана",
+                                      label="Категории")
     tags = forms.CharField(label="Теги", required=False, help_text="Перечислите теги чере запятую")
-
 
     class Meta:
         model = Card
@@ -27,7 +33,6 @@ class CardModelForm(forms.ModelForm):
         tags_str = self.cleaned_data['tags']
         tag_list = [tag.strip() for tag in tags_str.split(',') if tag.strip()]
         return tag_list
-
 
     def save(self, *args, **kwargs):
         instance = super().save(commit=False)

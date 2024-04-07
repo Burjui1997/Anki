@@ -21,7 +21,7 @@
                     <div>
                         <i class="bi bi-eye"></i> {{ card.views }}
                         <i class="bi bi-star-fill"></i> {{ card.favorites }}
-                        <a href="{% url 'detail_card_by_id' card_id=card.pk %}" class="btn btn-dark btn-sm" role="button">Подробнее</a>
+                        <a href="{% url 'detail_card_by_id' pk=card.pk %}" class="btn btn-dark btn-sm" role="button">Подробнее</a>
                     </div>
                 </div>
             </div>

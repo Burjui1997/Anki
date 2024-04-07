@@ -22,8 +22,8 @@ import debug_toolbar
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name='index'),
-    path('about/', views.about, name='about'),
+    path('', views.IndexView.as_view(), name='index'),
+    path('about/', views.AboutView.as_view(), name='about'),
     path('cards/', include('cards.urls')),
     path('cards/<int:card_id>/detail', views.get_detail_card_by_id, name='card_detail')
 ]
