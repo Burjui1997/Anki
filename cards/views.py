@@ -9,11 +9,12 @@ from django.db.models import F, Q
 from django.http import HttpResponse
 from django.shortcuts import render
 from .models import Card
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, redirect
 from django.views.decorators.cache import cache_page
 from django.http import HttpResponseRedirect
 from .forms import CardModelForm
 from django.core.paginator import Paginator
+from django.views import View
 from django.views.generic import TemplateView
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
@@ -130,20 +131,50 @@ class CardDetailView(DetailView):
         return context
 #
 
+class AddCardView(View):
+    # Метод для обработки GET-запросов
+    def get(self, request, *args, **kwargs):
+        form = CardModelForm()  # Создаем пустую форму
+        context = {
+            'form': form,
+            # предполагаем, что info['menu'] - это данные, необходимые для отображения меню на странице
+            'menu': info['menu'],
+        }
+        return render(request, 'cards/add_card.html', context)
 
-def add_card(request):
-    if request.method == 'POST':
+    # Метод для обработки POST-запросов
+    def post(self, request, *args, **kwargs):
         form = CardModelForm(request.POST)
         if form.is_valid():
-            card = form.save()
+            card = form.save()  # Сохраняем форму, если она валидна
+            # Перенаправляем пользователя на страницу созданной карточки
             return redirect(card.get_absolute_url())
-    else:
-        form = CardModelForm()
+        else:
+            # Если форма не валидна, возвращаем ее обратно в шаблон с ошибками
+            context = {
+                'form': form,
+                'menu': info['menu'],
+            }
+            return render(request, 'cards/add_card.html', context)
 
-    context = {
-        'form': form,
-        'menu': info['menu'],
-    }
+def preview_card_ajax(request):
+    if request.method == "POST":
+        question = request.POST.get('question', '')
+        answer = request.POST.get('answer', '')
+        category = request.POST.get('category', '')
 
-    return render(request, 'cards/add_card.html', context)
+        # Генерация HTML для предварительного просмотра
+        html_content = render_to_string('cards/card_detail.html', {
+            'card': {
+                'question': question,
+                'answer': answer,
+                'category': 'Тестовая категория',
+                'tags': ['тест', 'тег'],
 
+            }
+        }
+                                        )
+
+        return JsonResponse({'html': html_content})
+    # return JsonResponse({'error': 'Invalid request'}, status=400)
+    return HttpResponseRedirect('/cards/add/')

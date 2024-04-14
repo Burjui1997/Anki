@@ -17,7 +17,7 @@
                 <span class="badge bg-secondary"><a href="{% url 'get_cards_by_tag' tag_id=tag.pk %}" class="text-white">{{ tag.name }}</a></span>
                 {% endfor %}
             </p>
-            <div class="d-flex justify-content-between align-items-center mt-3">
+             <div class="d-flex justify-content-between align-items-center mt-3">
                 <a href="{% url 'catalog' %}" class="btn btn-dark">Вернуться к каталогу</a>
                 <div>
                     <i class="bi bi-eye"></i> {{ card.views }}

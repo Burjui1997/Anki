@@ -8,5 +8,6 @@ urlpatterns = [
     path('categories/<slug:slug>/', views.get_cards_by_category, name='category'),
     path('tags/<int:tag_id>/', views.get_cards_by_tag, name='get_cards_by_tag'),
     path('<int:pk>/detail/', views.CardDetailView.as_view(), name='detail_card_by_id'),
-    path('add/', views.add_card, name='add_card'),
+    path('add/', views.AddCardView.as_view(), name='add_card'),
+    path('preview_card_ajax/', views.preview_card_ajax, name='preview_card_ajax'),
 ]

@@ -25,7 +25,7 @@ urlpatterns = [
     path('', views.IndexView.as_view(), name='index'),
     path('about/', views.AboutView.as_view(), name='about'),
     path('cards/', include('cards.urls')),
-    path('cards/<int:card_id>/detail', views.get_detail_card_by_id, name='card_detail')
+    path('users/', include('users.urls', namespace='users')),
 ]
 
 if settings.DEBUG:

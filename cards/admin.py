@@ -32,7 +32,7 @@ class CardAdmin(admin.ModelAdmin):
 
     @admin.display(description='Категория', ordering='cattegory_id__name')
     def category_name(self, obj):
-        return obj.category_id.name
+        return obj.category_id
     # category_name.short_description = 'Категория'
 
     @admin.display(description='Теги', ordering='tags__name')
